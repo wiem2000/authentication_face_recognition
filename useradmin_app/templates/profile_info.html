@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<h1 class="text-center mt-4 "> Bienvenue dans votre compte </h1>
+
+<div class="container ">
+    <div class="row mt-5">
+        <div class="col-md-9">
+
+
+
+
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row">
+
+
+                        <!-- Grid column -->
+                        <div class="col-lg-5">
+
+
+                            <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+
+                                {% if user.photo %}
+                                <img class="img-fluid" src="{{ user.photo.url }}" alt=""
+                                    style="width: 350px;height: 200px;">
+                                {% else %}
+                                <img class="img-fluid" src="{% static 'img/logo.png' %} " class="img-fluid"
+                                    style="height: 250px;" />
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-7">
+
+
+
+                            <h2 class="font-weight-bold mb-3">{{user.first_name}} {{user.last_name}}</h2>
+
+
+                            <ul class="list-group list-group-flush">
+                                
+                                <li class="list-group-item"><b>E-mail personel: </b> {{user.email}} </li>
+                                <li class="list-group-item"><b>Role: </b>
+                                    {% if user.admin == True %}  Administrateur  {% else %} Utilisateur {% endif %} 
+                                </li>
+                                
+
+
+                            </ul>
+
+
+
+
+                        </div>
+                    </div>
+                    <br><br>
+
+                    <div class="mt-4">
+                        <div class="card-meta float-right">
+                            <a href="{% url 'update_user' user.user_id %}" class="btn btn-secondary right"><i class="fas fa-cogs ic-w mr-1"></i> Modifier
+                                mes
+                                données personnelles </a>
+
+                        </div>
+                        <div class="card-meta float-right">
+                            <a href="{% url 'update_mdp' %}" class="btn btn-secondary right"><i class="fas fa-lock"></i>   Changer le mot de passe </a>
+                                
+                                
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+	
+    <style type="text/css">
+		body {
+			background-image: url("{% static 'img/facial_recognition.png' %}");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		.container {
+            margin-top:6cm;
+            margin-left: 1cm;
+			display: flex;
+			flex-direction: column;
+			
+			
+			height: 30vh;
+            width: 80vh;
+			
+            
+			text-shadow: 1px 1px #000;
+		}
+		.container h1 {
+			font-size: 4rem;
+			
+		}
+		.container p {
+            color: aliceblue;
+			font-size: 1.25rem;
+		}
+ 
+	</style>
+
+
+	<div class="container">
+		
+		<p>
+            <br>Grâce à cette technologie innovante, vous pouvez accéder à votre compte en toute sécurité.<br> Il vous suffit de vous positionner devant votre webcam et notre système fera le reste.
+            <br> Nous sommes convaincus que cette méthode d'authentification est la plus pratique et 
+            la plus sûre pour vous. <br>
+            Essayez dès maintenant notre application et rejoignez notre communauté .</p>
+            <div class="row">
+                <div class="col">
+            <a class="btn btn-light" href="/registration" style="color: #1f024e ;" >Creer un compte </a>
+        </div>
+        <div class="col">
+            <a class="btn btn-light" href="/login"  style="color: #1f024e;">Se connecter</a>
+        </div>
+        </div>
+	</div>
+
+{% endblock %}

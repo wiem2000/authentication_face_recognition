@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style type="text/css">
+    body {
+        background-image: url("{% static 'img/facial_recognition.png' %}");
+        background-position: right; 
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .card {
+  opacity: 0.95; /* Remplacez la valeur par le niveau d'opacité souhaité (entre 0 et 1) */
+}
+
+</style>
+
+<div class="container" style="margin-left: 0.2cm;">
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+           
+
+
+            <div class="card mt-4 mb-3">
+
+                <div class="card-header secoundary-color  text-center py-4">
+                    <i class="fas fa-user"></i>
+                    <h3><strong>Inscription </strong></h3>
+                </div>
+
+
+
+                <!--Card content-->
+                <div class="card-body px-lg-4 pt-0">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger text-center mt-5"><strong>{{message}}</strong></div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <!-- Form -->
+                    <form class=" mt-3" style="color: #757575;" action="#!" method="POST"
+                        enctype="multipart/form-data">
+                       
+
+                        {% csrf_token %}
+                       
+                       
+                        <div class="md-form">
+                            {{ form.last_name.label_tag }}
+                            {{ form.last_name }}
+                        </div>
+                        <div class="md-form">
+                            {{ form.first_name.label_tag }}
+                            {{ form.first_name }}
+                        </div>
+                        <div class="md-form">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                        </div>
+
+                        <div class="md-form">
+                            {{ form.password.label_tag }}
+                            {{ form.password }}
+                        </div>
+                        <div class="md-form">
+                            {{ form.mdp2.label_tag }}
+                            {{ form.mdp2 }}
+                        </div>
+                        
+                        <div class="md-form">
+                            Choisir une Photo:   {{ form.photo }} 
+                          
+                           
+                       </div>
+                         
+                        
+                        <button type="submit" class="btn btn-black btn-block"> S'inscrire </button>
+
+                    </form>
+                    <!-- Form -->
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

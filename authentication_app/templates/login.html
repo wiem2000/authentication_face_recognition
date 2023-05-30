@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<style type="text/css">
+    body {
+        background-image: url("{% static 'img/facial_recognition.png' %}");
+        background-position: right; 
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .card {
+  opacity: 0.95; /* Remplacez la valeur par le niveau d'opacité souhaité (entre 0 et 1) */
+}
+</style>
+
+
+
+<div class="container" style="margin-left: 0.2cm; max-width: 3500px;">
+
+    <div class="row">
+        <div class="col">
+
+
+
+            <div class="chargement text-center " style="display:none; color: aliceblue; margin-top: 250px;">
+
+                Veuillez attendre quelque secondes ... <p id="sec">0</p>
+
+            </div>
+
+            <div class="camera">
+                {% include 'camera.html'%}
+                <a id="compare" href="{% url 'compare' %}" class="btn btn-indigo btn-rounded btn-block my-4 waves-effect z-depth-0"> login avec reconaissance faciale </a>
+               
+            </div>
+
+
+
+
+        </div>
+
+        <div class="col">
+
+            {% include 'login_form.html'%}
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+
+        $('#compare').click(function () {
+            $('.camera').hide();
+            $('.chargement').show();
+            var valeur = 0;
+            setInterval(function () {
+                valeur++; // incrémenter la valeur de la div
+                $('#sec').text(valeur); // mettre à jour le contenu de la div
+            }, 1000);
+
+        });
+    });
+</script>
+
+
+{% endblock %}

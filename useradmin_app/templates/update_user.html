@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Material form login -->
+  <div class="card">
+ 
+     <div class="card-header info-color white-text text-center py-4">
+         <i class="fas fa-user"></i>
+       <h5><strong>Modifier les données personelles </strong></h5>
+     </div> 
+     {% if messages %}
+     {% for message in  messages %}
+     <div class="alert alert-danger text-center mt-2"><strong>{{message}}</strong></div>
+     {% endfor %}
+     {% endif %}
+     
+     <br><br>
+ 
+     
+     
+     
+     <!--Card content-->
+     <div class="card-body px-lg-5 pt-0">
+             
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+
+          <div class="md-form">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+        </div>
+        <div class="md-form">
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+        </div>
+        <div class="md-form">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        
+        <div class="md-form">
+            Choisir une Photo:   {{ form.photo }} 
+          
+           
+       </div>
+          
+          <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"> Valider </button>
+        </form>
+        
+     
+       </div>
+     
+     </div>
+     <!-- Material form login -->
+   
+   </div>
+
+
+
+
+{% endblock %}
