@@ -1,4 +1,4 @@
-# facial recognition authentication system
+# Facial Recognition Authentication System
 
 This project is a facial recognition authentication system designed to provide secure and convenient access control using facial biometrics. The system utilizes computer vision and machine learning techniques to recognize and verify individuals based on their facial features.
 
@@ -14,5 +14,6 @@ This project is a facial recognition authentication system designed to provide s
 ## Execution
 
 
-https://github.com/wiem2000/authentication_face_recognition/assets/96753615/de32b253-2fe6-453f-ba35-ff6daeba0bd6
+![video-execution_uP6ZSHJK](https://github.com/wiem2000/authentication_face_recognition/assets/96753615/a76de55b-7dcb-451a-88a0-a1272539b3f6)
+
 
